@@ -9,7 +9,7 @@ const ChooseSection = (props) => {
   const [listpart, setListPart] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8888/part/get/'+ props.testid)
+    fetch('https://pawfectielts.onrender.com/part/get/'+ props.testid)
       .then(response => response.json())
       .then(data => {
         setListPart(data);

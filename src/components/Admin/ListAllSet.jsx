@@ -3,7 +3,7 @@ import AddSet from './AddSet';
 import { Link } from 'react-router-dom';
 
 const ListAllSet = (props) => {
-  const API_URL = 'http://localhost:8888/admin/set/getall';
+  const API_URL = 'https://pawfectielts.onrender.com/admin/set/getall';
   const [setList, setSetList] = useState([]);
   const [urlSet, setUrl] = useState(API_URL);
 

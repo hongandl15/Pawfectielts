@@ -20,6 +20,7 @@ const ChangePasswordForm = () => {
     currentPassword: '',
     newPassword: '',
   });
+
   const userid = JSON.parse(sessionStorage.getItem('user')).id
 
   const handleSubmit =  async(e) => {
@@ -35,7 +36,10 @@ const ChangePasswordForm = () => {
       setAlert({ type: 'danger', message: 'An error occurred while changing the password.' });
     }
   
-
+    setRequestPassword({
+      currentPassword: '',
+      newPassword: '',
+    })
     // Perform the password change logic here, e.g. send a request to your backend API.
 
     // Reset the form fields

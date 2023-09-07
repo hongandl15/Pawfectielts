@@ -12,7 +12,7 @@ function AddSet({ onSetAdded }) {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8888/admin/addset', {
+      const response = await axios.post('https://pawfectielts.onrender.com/admin/addset', {
         name: setName,
       });
       // Handle success or show a message to the user

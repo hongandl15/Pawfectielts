@@ -11,7 +11,7 @@ const AddTestCard = ( props ) => {
 
   const getSkill = async () => {
         try {
-          const response = await fetch('http://localhost:8888/skill/getskill/' + props.skill, {
+          const response = await fetch('https://pawfectielts.onrender.com/skill/getskill/' + props.skill, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export const TestCardAdmin = ( props ) => {
 
    const deleteTest = async () => {
     try {
-      const response = await fetch('http://localhost:8888/admin/delete/' + props.testid, {
+      const response = await fetch('https://pawfectielts.onrender.com/admin/delete/' + props.testid, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
