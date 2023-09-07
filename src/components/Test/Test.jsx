@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 export const Test = (props) => {
 
-    const API_URL = 'http://localhost:8888/part/get/' + props.testid ;
+    const API_URL = 'https://pawfectielts.onrender.com/part/get/' + props.testid ;
     const [testData, setData] = useState([]);
     const [urlSet, setUrl] = useState(API_URL);
 
