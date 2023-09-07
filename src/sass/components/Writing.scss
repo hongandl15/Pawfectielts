@@ -1,0 +1,66 @@
+.Writing{
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    width: 47%;
+    textarea{
+        font-size: 20px;
+        width: 90%;
+    }
+}
+
+
+
+.Answer_writing{
+    background-color: $obj-bg;
+    margin: 10px;
+    width: 30%;
+    p{
+        font-size: 30px;
+    }
+
+    Button{
+        margin:10px
+    }
+    textarea{
+        border: ridge 1px rgb(209, 209, 209);
+        font-size: 20px;
+        width: 100%;
+        padding: 5px;
+        height: 500px;
+        background-color: #F8FAFD;
+        :focus{
+            outline: none !important;
+            border: ridge 1px rgb(255, 255, 255);
+        }
+    }
+
+    .note{
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .note.show{
+        textarea{
+            padding: 5px;
+            height: 100px;
+            background-color: #F8FAFD;
+
+        }
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+
+.button_show{
+    border-radius: 5px;
+    background-color: $main-color;
+    text-align: center;
+    width: 250px;
+    font-size: 25px;
+    margin: 10px 10px 10px 0;
+    color: white;
+}

@@ -1,0 +1,21 @@
+.number-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+.number-item {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.number-item.active {
+  color: white;
+  background-color: #ffad3b;
+}

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap');
+
+.catalogue{
+    height: 800px;
+    background-color: #e4e4e4;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    // background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255,255,255,0.5)), url("https://static.vecteezy.com/system/resources/previews/023/859/106/original/set-of-cute-mushroom-character-illustration-on-white-background-cartoon-character-generative-ai-png.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-size: contain;
+
+    &_child{
+        filter: drop-shadow(0 0 0.2rem rgb(54, 54, 54));
+        background-color: rgb(231, 86, 86);
+        margin: auto;
+        margin-top: 120px;
+        border-radius: 20px;
+        height: 250px;
+        width: 65%;
+        .catalogue-title{
+            width: 50%;
+            padding: 20px;
+            h1{
+                color: white;
+                font-size: 40px;
+                margin: 30px;
+            }
+            &_btn{
+                filter: drop-shadow(0 0 0.2rem rgb(219, 34, 34));
+                width: 200px;
+                font-size: 20px;
+                background-color: rgb(245, 131, 55);
+                color: white;
+                border-radius: 10px;
+                margin: 20px;
+                text-align: center;
+                padding: 10px;
+                font-weight: bold;
+                &:hover{
+                    cursor: pointer;
+                    filter: drop-shadow(0 0 0.2rem rgb(83, 64, 64));
+                }
+            }
+
+        }
+        img{
+            filter: drop-shadow(0 0.1rem 0.4rem rgb(49, 48, 48));
+            position: absolute;
+            top: -100px;
+            right: 50px;
+            height: 350px;
+        }
+    }
+}
+
+.catalogue_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .catalogue_card{
+        border-radius: 10px;
+        margin: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        filter: drop-shadow(0 0.2rem 0.6rem rgb(133, 133, 133));
+        background-color: rgba(255, 255, 255, 1);
+        height: 320px;
+        width: 230px;
+        img{
+            border-radius: 10px 10px 0 0px;
+            width: 230px;
+            height: 210px;
+            object-fit: cover;
+        }
+        &_title{
+            height: 70px;
+            padding: 10px;
+            text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(39, 105, 248);
+        }
+
+        &_decobar{
+            width: 100px;
+            height: 7px;
+            background-color: rgb(250, 210, 135);
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        &:hover{
+            cursor: pointer;
+            filter: drop-shadow(0 0.1rem 0.4rem rgb(29, 29, 29));
+            .catalogue_card_decobar{
+                background-color: orange;
+            }
+        }
+
+    }
+
+}

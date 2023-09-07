@@ -1,0 +1,21 @@
+.Topic_listening{
+    background-color: $obj-bg;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(233, 233, 233, 0.479);
+    box-shadow: 2px 2px 2px 2px rgb(219, 219, 219);
+    line-height: 25px;
+    margin: 15px;
+    width: 50%;
+    font-size: 20px;
+    max-height: 1000px;
+    overflow: scroll;
+    p{
+        margin-top: 20px;
+    }
+    h2{
+        margin-top: 20px;
+    }
+    .start_title{
+        font-style: italic;
+    }
+}

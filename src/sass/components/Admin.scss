@@ -1,0 +1,151 @@
+.admin{
+    display: flex;
+    flex: wrap;
+    margin-top: 10px;
+}
+
+.add_topic{
+    background-color: $obj-bg;
+    font-family: Arial, Helvetica, sans-serif;
+    filter: drop-shadow(0 0 0.1rem rgb(54, 54, 54));
+    border-radius: 10px;
+    padding: 20px;
+    line-height: 25px;
+    width: 60%;
+    font-size: 17px;
+    margin: auto;
+}
+
+.add_question{
+    background-color: $obj-bg;
+    font-family: Arial, Helvetica, sans-serif;
+    filter: drop-shadow(0 0 0.1rem rgb(54, 54, 54));
+    border-radius: 10px;
+    padding: 20px;
+    line-height: 25px;
+    margin-left: 15px;
+    width: 40%;
+    font-size: 17px;
+}
+
+.new_question_input{
+    border: ridge rgb(226, 226, 226) 1px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    textarea{
+        width: 100%;
+        padding: 3px;
+    } 
+}
+
+.new_question{
+    border: ridge rgb(255, 222, 222) 0.5px;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+    textarea{
+        width: 100%;
+        padding: 3px;
+    } 
+}
+
+
+.activeButton{
+    background-color: red !important; 
+}
+
+.admin_page{
+    padding: 20px;
+}
+
+.add_test_name{
+    width: fit-content;
+    input{
+        padding: 5px;
+        font-size: 25px;
+        border-radius: 10px;
+        filter: drop-shadow(0 0 0.1rem rgb(202, 202, 202));
+        border: ridge 1px rgb(138, 137, 137);
+    }
+}
+
+.add_input_part{
+    filter: drop-shadow(0 0 0.1rem rgb(202, 202, 202));
+    padding: 5px;
+    width: fit-content;
+    color: white;
+    font-size: 18px;
+    background-color: rgb(255, 152, 152);
+    margin-top: 20px;
+}
+
+.add_input_question{
+    filter: drop-shadow(0 0 0.1rem rgb(202, 202, 202));
+    padding: 5px;
+    width: fit-content;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: rgb(115, 158, 250);
+    margin-top: 20px;
+}
+
+.add_input_child{
+    display: block;
+    filter: drop-shadow(0 0 0.1rem rgb(202, 202, 202));
+    padding: 10px;
+    line-height: 10px;
+    border-radius: 5px;
+    width: fit-content;
+    color: white;
+    font-size: 15px;
+    background-color: rgb(255, 222, 112);
+    margin: auto;
+    margin-top: 20px;
+
+}
+
+.remove_btn{
+    display: flex;
+    justify-content: right;
+    filter: drop-shadow(0 0 0.1rem rgb(202, 202, 202));
+    padding: 10px;
+    width: fit-content;
+    border-radius: 10px;
+    line-height: 10px;
+    color: white;
+    font-size: 16px;
+    background-color: rgb(252, 99, 99);
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+
+.remove_btn_child{
+    filter: drop-shadow(0 0 0.1rem rgb(202, 202, 202));
+    padding: 5px;
+    width: fit-content;
+    color: white;
+    font-size: 15px;
+    background-color: rgb(253, 167, 68);
+    margin-top: 10px;
+}
+
+.edit_section{
+    border-radius: 3px;
+    margin-top: 40px;
+    filter: drop-shadow(0 0 0.1rem rgb(168, 168, 168));
+    box-shadow: 1px 1px 1px 2px rgb(105, 105, 105);
+    padding: 20px;
+}
+
+.save_btn{
+    padding: 10px 20px 10px 20px;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: rgb(135, 135, 255);
+    margin-top: 20px;
+}

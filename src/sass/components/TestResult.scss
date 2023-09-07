@@ -1,0 +1,130 @@
+.TestResult-container{
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.65rem;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 0 0 rgba(143,156,173,.2);
+    margin: auto;
+    margin-top: 20px;
+    width: 70%;
+    font-size: 1.4rem;
+    h3{
+        margin-top: 20px ;
+    }
+}
+.TestResult{
+    display: flex;
+    flex:wrap;
+    .result{
+        padding: 1.5rem 1rem;
+        background-color: #f8f9fa;
+        border: 1px solid #efefef;
+        box-shadow: 0 2px 8px 0 rgba(0,0,0,.05);
+        display: flex;
+        flex-direction: column;
+    }
+    .result-stats-item {
+        display: flex;
+        justify-content: space-between;
+    }
+    .result-stats-text {
+        width: 70px;
+        font-weight: 500;
+    }
+
+    .score_box{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 1.5rem 1rem;
+        border: 1px solid #efefef;
+        box-shadow: 0 2px 8px 0 rgba(0,0,0,.05);
+        border-radius: 0.65rem;
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+        align-items: center;
+        justify-content: flex-start;
+        height: 200px;
+    }
+    
+    .result-score-icontext {
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .result-score-text {
+        font-size: 2rem;
+        font-weight: 600;
+
+    }
+    .text-score{
+        font-size: 2rem;
+        color: #35509a;
+    }
+
+
+
+    .right{
+        color: green;
+    }
+    .wrong{
+        color: red;
+    }
+    .skip{
+        color: grey;
+    }
+    .score{
+        color: 35509a;
+    }
+}
+
+.result-answers-list {
+    margin: auto;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+.result-answers-item {
+    margin-bottom: 1rem;
+}
+
+.question-number {
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background-color: #e8f2ff;
+    color: #35509a;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    text-align: center;
+    display: inline-block;
+}
+
+.text-answerkey {
+    color: #35509a;
+    font-weight: 500;
+}
+
+.text-correct{
+    color: green;
+}
+
+.text-wrong{
+    color: red;
+}
+
+
+
+.test_result_card{
+    display: flex;
+    justify-content: space-around;
+    border:  ridge 1px rgb(219, 217, 217);
+    margin-top: 20px;
+    line-height: 16px;
+    font-size: 20px;
+    padding: 15px;
+
+}

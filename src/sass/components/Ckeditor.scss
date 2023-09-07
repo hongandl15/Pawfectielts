@@ -1,0 +1,15 @@
+.ckeditor{
+    margin: auto;
+    margin-top: 20px;
+    .ck-content {
+        /* Set height for the content editable area */
+        min-height: 100px; /* Adjust as needed */
+    }
+}
+
+.ck_passage{
+    .ck-content {
+        /* Set height for the content editable area */
+        min-height: 300px; /* Adjust as needed */
+    }
+}

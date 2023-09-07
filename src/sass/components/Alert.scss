@@ -1,0 +1,12 @@
+.alert-score{
+    position: absolute;
+    top: 50%; // Center vertically
+    left: 50%; // Center horizontally
+    transform: translate(-50%, -50%); // Adjust for both horizontal and vertical centering
+    background: lightgray;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 50px;
+    z-index: 1000;
+}

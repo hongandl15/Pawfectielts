@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    // user-select: none;   
+}
+
+    
+  @media (-webkit-device-pixel-ratio: 1.25) {
+    .similar, .sidebar{
+      zoom: 0.8;
+    }
+  }
+
+  @media (-webkit-device-pixel-ratio: 1.5) {
+    body{
+      zoom: 0.7;
+    }
+    .hero-slider{
+        height: 100vh;
+    }
+  }
+
+html {
+    font-size: 13px; 
+    scroll-behavior: smooth;
+    text-decoration: none;
+    color: black
+}
+
+body {
+    font-family: 'Aleo', serif;
+}
+
+::-webkit-scrollbar { width: 5px; height: 2px;}
+// ::-webkit-scrollbar-track-piece { background-color: #000;}
+::-webkit-scrollbar-thumb {background-color: rgb(160, 160, 160); border-radius: 2px;}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none !important; 
+    color: unset;
+}
+
+a:hover {
+    color: $main-color;
+}
+
+img {
+    max-width: 100%;
+}
+
+@each $color, $val in $colors {
+    .color-#{$color} {
+        color: $val;
+    }
+
+    .bg-#{$color} {
+        background-color: $val;
+    }
+}
+
+@each $val in $numbers {
+    .grid-col-#{$val} {
+        grid-template-columns: repeat($val, 1fr);
+    }
+}
+
+@each $val in $numbers {
+    .grid-col-sm-#{$val} {
+        @include mobile {
+            grid-template-columns: repeat($val, 1fr);
+        }
+    }
+}
+
+
+.main {
+    min-height: 100vh;
+
+}
+
+.header_title{
+    font-size:50px;
+    color:rgb(223, 221, 221);
+    margin:10px;
+    text-align:center;
+    font-weight: bold
+}
+
+.grid {
+    display: grid;
+}
+
+.comments{
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    margin-top: 20px;
+    margin-left: 40px;
+    text-align: center;   
+}
+
+.fb-comments {
+    -webkit-filter: hue-rotate(120deg);
+    filter: hue-rotate(120deg);
+}
+
+hr{
+    margin: 0;
+}
+
+.background{
+    padding-top: 10%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://assets.nflxext.com/ffe/siteui/vlv3/e89c9679-2f5f-491d-924c-c58924a8ee4b/b059ba59-7ad6-4d88-9d0d-41262a5072ff/VN-vi-20221121-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+    height: 700px;
+    background-repeat: no-repeat;
+}
+
+
+
+
+@include tablet{
+    .similar {
+        display: none;
+    }
+    .container {
+        width: 95%;
+        margin-right:10%;
+        // margin: auto;
+    }
+
+    .header{
+        display: block;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .similar {
+      display: none;
+    }
+
+    .sidebar{
+        display: none;
+    }
+    .container {
+        width: 88%;
+        margin: auto;
+        // margin: auto;
+    }
+  }
+
+button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.ReactAudioPlayer{
+    width: 70% !important;
+    position: relative;
+}
+
+.popup{
+    border-radius: 15px;
+    padding: 20px;
+    filter: drop-shadow(0 0 0.3rem rgb(37, 37, 37));
+    .close-button {
+        /* styles for the close button */
+        border: ridge 1px rgb(184, 183, 183);
+        padding: 0px 7px 0 7px;
+        border-radius: 5px;
+        position: absolute;
+        top: 10px; /* adjust this value to control vertical positioning */
+        right: 10px; /* adjust this value to control horizontal positioning */
+        background: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: #ff0000; /* red color for the "X" button */
+        cursor: pointer;
+    }
+    input{
+        border-radius: 7px;
+    }
+}
+
+
+
+

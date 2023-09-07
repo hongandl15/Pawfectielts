@@ -1,0 +1,44 @@
+.TestDetail{
+    margin: auto;
+    width: 50%;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.19);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.22); 
+    filter: drop-shadow(0 0 0.1rem rgb(122, 122, 122));
+
+    div:first-child{
+        font-size: 15px;
+        line-height: 25px;
+        .notice{
+            color: red;
+        }
+    }
+    &_option{
+        display: flex;
+        button{
+            background-color: $main-color;
+            border-radius: 10px;
+            color: white;
+            margin: 20px 20px 20px 0;
+            padding: 10px;
+            font-size: 15px;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.TestInfo{
+    div:nth-child(2){
+        display: flex;
+        font-size: 20px;
+        Button{
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
