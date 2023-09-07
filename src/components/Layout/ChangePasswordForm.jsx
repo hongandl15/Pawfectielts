@@ -50,7 +50,7 @@ const ChangePasswordForm = () => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-5">
-            <div className="card">
+            <div className="card mb-5">
               <h2 className="card-title text-center">Đổi mật khẩu</h2>
               <div className="card-body py-md-4">
                 <form _lpchecked="1" onSubmit={handleSubmit}>

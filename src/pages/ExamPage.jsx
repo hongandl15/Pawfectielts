@@ -4,7 +4,6 @@ import React from "react";
 import TestSubmit from '../components/Test/TestSubmit';
 import AudioPlayer from '../components/Test/AudioPlayer';
 import ChooseSection, { ChooseSectionListening, ChooseSectionSpeaking, ChooseSectionWriting } from '../components/Utils/ChooseSection';
-import NextSection from '../components/NextSection';
 import { useLocation } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
 

@@ -23,7 +23,7 @@ const Home = () => {
                     <Banner imageLink="./banner-6.png" title="Thi thử IELTS miễn phí 2023" btn_content1="Thi thử ngay" btn_content2="Tìm hiểu thêm" />
                     <Catalogue imageLink="./banner-6.png" />
                     <ListTestCard setid={1} />
-                    <ListTestCard setid={1} />
+                    <ListTestCard setid={2} />
                     <ListTestCard setid={1} />
 
                 </>
