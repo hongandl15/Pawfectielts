@@ -3,14 +3,27 @@ import { useHistory } from 'react-router-dom'
 
 const LogoutPopup = ({ onClose, onLogout }) => {
   const history = useHistory();
-  const handleLogout = () => {
-    sessionStorage.removeItem('user');
-    onLogout();
-    onClose();
-    window.alert("Đăng xuất thành công")
-    history.push({
-      pathname: "/" 
-    });
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch(`https://pawfectielts.onrender.com/user/logout`, {method: 'POST'});
+
+      if (response.ok) {
+        // Save relevant information to session storage
+        onLogout();
+        onClose();
+        sessionStorage.removeItem('user');
+        window.alert("Đăng xuất thành công")
+        history.push({
+          pathname: "/home" 
+        });
+      } else {
+        window.alert("Đăng xuất thất bại")
+      }
+    } catch (error) {
+    }
+
+
   };
 
   return (

@@ -44,10 +44,6 @@ export const Header = (props) => {
   const handleLogout = () => {
     sessionStorage.removeItem('user');
     setUser('');
-
-    history.push({
-      pathname: "/"
-    });
   };
 
   useEffect( () => {
@@ -72,7 +68,7 @@ export const Header = (props) => {
         <a><div>Liên lạc</div></a>
       </div>
 
-      <div className="header_user">
+      <div className="header_user ">
         {user ? (
           <>
             <Link to="/profile" className="LinkWithoutUnderline d-flex">
@@ -81,8 +77,8 @@ export const Header = (props) => {
             <button onClick={() => setShowLogoutPopup(true)}>logout</button>
           </>
         ) : (
-          <div>
-            <button onClick={() => setShowLoginPopup(true)}>Login</button>
+          <div className='d-flex'>
+            <button className=' m-2' onClick={() => setShowLoginPopup(true)}>Login</button>
             <Link to="/register" className="LinkWithoutUnderline d-flex">
               <button className='m-2'>Register</button>
             </Link>

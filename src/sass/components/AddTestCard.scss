@@ -74,4 +74,8 @@
 
 .set-name{
     display: block;
+    transition:  scale 0.3s;
+    &:hover{
+        scale: 1.05
+    }
 }

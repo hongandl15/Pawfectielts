@@ -92,10 +92,10 @@ const TestResult = (props) => {
             <span>
               <span class="text-answerkey">{item.correctAnswer}</span>:
               {item.answer !== "" ? (
-                <i class="mr-1">{item.answer}</i>
+                <i class="mr-1">  {item.answer}</i>
               ):
               (
-                <i class="mr-1"> chưa trả lời</i>
+                <i class="mr-1">  chưa trả lời</i>
               )}
                {item.correct === false ?(
                 <span class="text-wrong"> X</span>

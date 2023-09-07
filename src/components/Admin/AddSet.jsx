@@ -31,9 +31,9 @@ function AddSet({ onSetAdded }) {
   return (
     <div className='addSet'>
       <h2>Add a New Set</h2>
-      <form className='d-flex' onSubmit={handleSubmit}>
-        <div className='mr-2'>
-          <label htmlFor="setName">Set Name: </label>
+      <label htmlFor="setName">Set Name: </label>
+      <form className='d-flex justify-content-around' onSubmit={handleSubmit}>
+        <div className='w-50'>
           <input
             type="text"
             id="setName"

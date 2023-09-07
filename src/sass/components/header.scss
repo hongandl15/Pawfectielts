@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Aleo&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
 .header{
     position: sticky;
     top: 0;
@@ -44,11 +47,14 @@
     &_menu{
         display: flex;
         align-items: center;
-        font-size: 25px;
-        color: rgb(0, 132, 255);
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+        // font-family: 'Heebo', sans-serif;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: bolder;
+        text-transform: uppercase;
         a{
             text-decoration: none;
-            font-weight: bold;
             color: rgb(0, 126, 243);
         }
         div{
@@ -57,7 +63,7 @@
             transition: 0.2s color;
             &:hover{
                 cursor: pointer;
-                color: black;
+                color: rgb(255, 103, 103);
             }
         }
     }

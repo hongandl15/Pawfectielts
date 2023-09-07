@@ -35,42 +35,31 @@ const ListAllSet = (props) => {
   };
 
   return (
-    <>
-    <h1 className='m-auto mt-5 w-25'>Admin </h1>
+    <div className='pt-5'>
+    <h1 className='admin-title'>Admin </h1>
     <div className='setTable'>
-      <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          {setList.map((item, index) => (
-            <tr key={item.id}>
-              <th scope="row">{index + 1}</th>
-              <td>{item.id}</td>
-              <td>
-                <Link
-                  to={{
-                    pathname: '/admin/set/',
-                    state: { stateParam: item },
-                  }}
-                  className="set-name"
-                >
-                  {item.name}
-                </Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
+    <ol className="olcards">
+      {setList.map((item, index) => (
+            <Link
+            to={{
+              pathname: '/admin/set/',
+              state: { stateParam: item },
+            }}
+            className="set-name"
+          >
+        <li key={index} style={{ '--cardColor': '#36aeb3' }}>
+          <div className="content">
+            <div className="icon">😁</div>
+            {/* <div className="title">{set.id}</div> */}
+            <div className="text">{item.name}</div>
+          </div>
+        </li>
+        </Link>
+      ))}
+    </ol> 
     </div>
-    
     <AddSet onSetAdded={handleSetAdded} />
-    </>
+    </div>
   );
 };
 

@@ -14,7 +14,6 @@ const LoginPopup = ({ onClose, onLogin }) => {
     try {
         const response = await fetch(`https://pawfectielts.onrender.com/api/login?username=${username}&password=${password}`, {method: 'POST'});
         const data = await response.json();
-  
         if (response.ok) {
           // Save relevant information to session storage
           onLogin(JSON.stringify(data));
@@ -38,27 +37,27 @@ const LoginPopup = ({ onClose, onLogin }) => {
   return (
     <div className="overlay">
       <div className="popup bg-dark">
-      <button className='m-3 close-button' onClick={onClose}>X</button>
+        <div className='m-3 close-button' onClick={onClose}>X</div>
         <h2 className='text-warning'>Login</h2>
         <input
-        className='m-1 p-2'
+          className='m-1 p-2'
           type="text"
           placeholder="Username"
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={async(e) => await setUsername(e.target.value)}
         />
         <input
-         className='m-1 p-2'
+          className='m-1 p-2'
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={async(e) => await setPassword(e.target.value)}
         />
-        <button className='m-3 text-warning'onClick={handleLogin}>Login</button>
-
+        <button type='submit' onSubmit={handleLogin} onClick = {handleLogin}className='m-3 text-warning'>Login</button>
       </div>
     </div>
   );
+  
 };
 
 export default LoginPopup;

@@ -12,7 +12,8 @@
 
 
 .Answer_writing{
-    background-color: $obj-bg;
+    // background-color: $obj-bg;
+    padding: 20px;
     margin: 10px;
     width: 30%;
     p{
@@ -59,8 +60,9 @@
     border-radius: 5px;
     background-color: $main-color;
     text-align: center;
-    width: 250px;
+    padding: 10px;
+    width: fit-content;
     font-size: 25px;
-    margin: 10px 10px 10px 0;
+    margin: 0px 10px 0px 0px;
     color: white;
 }
