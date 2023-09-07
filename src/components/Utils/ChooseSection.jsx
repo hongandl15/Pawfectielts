@@ -9,7 +9,7 @@ const ChooseSection = (props) => {
   const [listpart, setListPart] = useState([]);
 
   useEffect(() => {
-    fetch('https://pawfectielts.onrender.com/part/get/'+ props.testid)
+    fetch('http://localhost:8888/part/get/'+ props.testid)
       .then(response => response.json())
       .then(data => {
         setListPart(data);
@@ -72,13 +72,14 @@ const ChooseSection = (props) => {
       {listpart && listpart.map((part) => (
         selectedWindow == part.id  && 
         <>
-          <Test key={"test" + selectedWindow} testid = {props.testid} passage={part.order} /> 
+        
+          <Test key={props.testid + part.order} testid = {props.testid} passage={part.order} /> 
           {props.testskill == 'reading' &&
-            <Answer key={"answer" + selectedWindow}  partid={selectedWindow} testid = {props.testid}  partorder ={part.order} />
+            <Answer key={"answerreading" + selectedWindow}  partid={selectedWindow} testid = {props.testid}  partorder ={part.order} />
           }
 
           {props.testskill == 'listening' &&
-            <Answer key={"answer" + selectedWindow}  partid={selectedWindow} testid = {props.testid} partorder ={part.order}/>
+            <Answer key={"answerlistening" + selectedWindow}  partid={selectedWindow} testid = {props.testid} partorder ={part.order}/>
           }
 
           {props.testskill == 'writing' &&
