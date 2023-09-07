@@ -12,13 +12,11 @@ function AddSet({ onSetAdded }) {
     event.preventDefault();
 
     try {
-      const response = await axios.post('https://pawfectielts.onrender.com/admin/addset', {
+      const response = await axios.post('http://localhost:8888/admin/addset', {
         name: setName,
       });
-
       // Handle success or show a message to the user
       console.log('Set added successfully:', response.data);
-
       // Clear the input field after submission
       setSetName('');
 
@@ -31,11 +29,11 @@ function AddSet({ onSetAdded }) {
   };
 
   return (
-    <div>
+    <div className='addSet'>
       <h2>Add a New Set</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="setName">Set Name:</label>
+      <form className='d-flex' onSubmit={handleSubmit}>
+        <div className='mr-2'>
+          <label htmlFor="setName">Set Name: </label>
           <input
             type="text"
             id="setName"
@@ -43,8 +41,9 @@ function AddSet({ onSetAdded }) {
             onChange={handleInputChange}
           />
         </div>
-        <div>
-          <button type="submit">Add Set</button>
+
+        <div className='m-2 addsetbtn'>
+          <button type="submit">Thêm Set mới</button>
         </div>
       </form>
     </div>

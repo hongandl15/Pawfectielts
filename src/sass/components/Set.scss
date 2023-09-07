@@ -5,3 +5,53 @@
     margin: auto;
     margin-top: 10px;
 }
+
+.addSet{
+    width: 500px;
+    margin: auto;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: ridge 1px black;
+    background-color: rgb(250, 250, 136);
+
+    input{
+        margin: 5px;
+        border-radius: 10px;
+        padding: 3px;
+        background-color: rgb(224, 224, 255)
+    }
+
+    .addsetbtn{
+        background-color: rgb(252, 137, 137);
+        padding: 0px 5px 0px 5px;
+        line-height: 40px;
+        font-size: 15px;
+        border-radius: 10px;
+        color: white;
+    }
+
+}
+
+
+.setTable{
+    max-height: 1000px;
+    padding: 20px;
+    overflow: scroll;
+    filter: drop-shadow(0 0 0.3rem rgb(80, 80, 80));
+    table{
+        border-collapse: collapse;
+
+    }
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 20px;
+    width: 80% !important;
+    td,th{
+        background-color: rgb(219, 219, 252) !important;
+        border: ridge 1px rgb(143, 143, 143);
+        font-size: 25px !important;
+    }
+
+}

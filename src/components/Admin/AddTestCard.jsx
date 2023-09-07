@@ -1,42 +1,53 @@
 import React, {useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 const AddTestCard = ( props ) => {
   const [skill, setSkill] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const history = useHistory();
 
-  useEffect(() => {
-    try {
-        fetch('https://pawfectielts.onrender.com/skill/getskill/'+ props.skill)
-        .then(response => response.json())
-        .then(data => {
-          setSkill(data);
-          console.log(data);
-        })
-        .catch(error => {
-          console.error('Fetch error:', error);
-        });
+  useEffect( () =>{
+    getSkill();
+  },[props.skill])
+
+  const getSkill = async () => {
+        try {
+          const response = await fetch('http://localhost:8888/skill/getskill/' + props.skill, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+  
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }else{
+            const skill = await response.json()
+            setSkill(skill)
+          }
     } catch (error) {
       console.error('Error:', error);
     }
-   }, [props.skill]);
+  }
+
+  const navigatePage =() =>{
+        history.push({
+          pathname: "/addtest/"+ skill.name + '/' +props.setid,
+          state: {
+              test: props.test,
+              setid: props.setid,
+              skillid: skill.id,
+          }
+        });
+  }
 
   return (
     <>
-    <Link 
-        to={{
-            pathname: "/addtest/"+ skill.name + '/' +props.setid,
-            state: {
-                test: props.test,
-                setid: props.setid,
-                skillid: skill.id,
-            }
-        }}>
         <div className='add-test-card'>
-          <div className='add-test-card_img'>
+          <div className='add-test-card_img' onClick={navigatePage}>
             <img src="https://www.computerhope.com/jargon/p/plus.png" alt="" />
             <p>Thêm bài test {skill.name}</p>
           </div>
         </div>
-    </Link>
     </>
   );
 };
@@ -45,45 +56,27 @@ export default AddTestCard;
 
 
 export const TestCardAdmin = ( props ) => {
-  const [skill, setSkill] = useState('');
 
-  useEffect(() => {
+
+   const deleteTest = async () => {
     try {
-        fetch('http://localhost:8888/skill/getskill/'+ props.skill)
-        .then(response => response.json())
-        .then(data => {
-          setSkill(data);
-          console.log(data);
-        })
-        .catch(error => {
-          console.error('Fetch error:', error);
-        });
-    } catch (error) {
-      console.error('Error:', error);
-    }
-   }, [props.skill]);
+      const response = await fetch('http://localhost:8888/admin/delete/' + props.testid, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-
-   const deleteTest = () => {
-      try{
-        fetch('http://localhost:8888/admin/delete/' + props.testid, {
-          method: 'DELETE',
-          headers: {
-              'Content-Type': 'application/json',
-          }
-        })
-        .then(response => 
-          {console.log(response);
-            props.hideTestCardAdmin()
-        })
-        .catch(error => {
-            console.error('Fetch error:', error);
-        });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }else{
+        props.hideTestCardAdmin()
+      }
       } catch (error) {
         console.error('Error:', error);
       }
     }
-   
+
 
   return (
     <>

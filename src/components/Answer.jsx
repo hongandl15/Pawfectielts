@@ -8,7 +8,7 @@ import AlertScore from './Utils/AlertScore';
 
 const Answer = (props) => {
 
-  const API_URL = 'http://localhost:8888/question/get/' + props.partid;
+  const API_URL = 'https://pawfectielts.onrender.com/question/get/' + props.partid;
   const [testData, setData] = useState([]);
   const [urlSet, setUrl] = useState(API_URL);
   const [answers, setAnswers] = useState(Array(40).fill(''));
@@ -122,7 +122,7 @@ export const AnswerWriting = (props) => {
       const submitContent = JSON.stringify({ answer: savedAnswers, topic: listpart })
       try {
 
-        const response = await fetch('http://localhost:8888/result/getpassagescore/'+ props.testid + '?topicInput=' + HTMLToString(props.partcontent) +'&userId='+ userId, {
+        const response = await fetch('https://pawfectielts.onrender.com/result/getpassagescore/'+ props.testid + '?topicInput=' + HTMLToString(props.partcontent) +'&userId='+ userId, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -255,7 +255,7 @@ export const AnswerSpeaking = (props) => {
       setShowComponent(true); // show the component
       const savedTranscripts = JSON.parse(sessionStorage.getItem('ieltsTranscripts'))
       const submitContent = JSON.stringify({ answer: savedTranscripts, topic: listpart })
-      const response = await fetch('http://localhost:8888/result/getpassagescore/'+ props.testid + '?topicInput=' + HTMLToString(props.partcontent) +'&userId='+ userId, {
+      const response = await fetch('https://pawfectielts.onrender.com/getpassagescore/'+ props.testid + '?topicInput=' + HTMLToString(props.partcontent) +'&userId='+ userId, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

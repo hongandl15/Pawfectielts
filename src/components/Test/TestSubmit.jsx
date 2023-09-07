@@ -15,7 +15,7 @@ const TestSubmit = (props) => {
       setIsSubmitting(true);
 
       try {
-        const response = await fetch('http://localhost:8888/result/checkResult/' + props.testid + "?userId=" + userId, {
+        const response = await fetch('https://pawfectielts.onrender.com/result/checkResult/' + props.testid + "?userId=" + userId, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -117,7 +117,7 @@ export const TestResultPassage = (props) => {
   const [score, setScore] = useState([]);
   useEffect(() => {
     try {
-        fetch('http://localhost:8888/result/getPassageResult/'+ props.testResultId)
+        fetch('https://pawfectielts.onrender.com/result/getPassageResult/'+ props.testResultId)
         // fetch('http://localhost:8888/result/getPassageResult/520')
         .then(response => response.json())
         .then(data => {

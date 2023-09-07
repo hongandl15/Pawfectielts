@@ -44,7 +44,7 @@ const AdminEditPageReading = (props) => {
     const submitDataToApi = () => {
         const isSubmit = window.confirm("Bạn có chắc chắn muốn lưu bài test")
         if(isSubmit){
-            axios.post('http://localhost:8888/admin/addtest', {
+            axios.post('https://pawfectielts.onrender.com/admin/addtest', {
                 testName: testName,
                 listTest: listTest,
                 setid: setid,

@@ -36,7 +36,9 @@ const ListAllSet = (props) => {
 
   return (
     <>
-      <table className="table table-dark w-75 m-auto mt-5">
+    <h1 className='m-auto mt-5 w-25'>Admin </h1>
+    <div className='setTable'>
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -65,7 +67,9 @@ const ListAllSet = (props) => {
         </tbody>
       </table>
 
-      <AddSet onSetAdded={handleSetAdded} />
+    </div>
+    
+    <AddSet onSetAdded={handleSetAdded} />
     </>
   );
 };

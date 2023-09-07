@@ -12,8 +12,7 @@ const Profile = (props) => {
     const user= JSON.parse(sessionStorage.getItem('user'));
     const userid = user.id
     const API_URL = 'https://pawfectielts.onrender.com/result/getall/' + userid;
-
-        
+ 
     useEffect(() => {
         setUsername(user.name);
         setEmail(user.email);
@@ -49,7 +48,7 @@ const Profile = (props) => {
 
                 <div className='profile_name'>{username}</div>
                 <div className='profile_bio'>{email}</div>
-                <div className='profile_bio'>The best things come from living outside of your comfort zone</div>
+                {/* <div className='profile_bio'>The best things come from living outside of your comfort zone</div> */}
                 <div>
                     <div className='change-password-btn'>
                         <button  onClick={() => setShowForm(!showForm)}>
