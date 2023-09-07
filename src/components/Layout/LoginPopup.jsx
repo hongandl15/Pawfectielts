@@ -12,7 +12,7 @@ const LoginPopup = ({ onClose, onLogin }) => {
     // Here you can add your authentication logic
     // For simplicity, let's assume successful login and store the username in sessionStorage
     try {
-        const response = await fetch(`http://localhost:8888/api/login?username=${username}&password=${password}`, {method: 'POST'});
+        const response = await fetch(`https://pawfectielts.onrender.com/api/login?username=${username}&password=${password}`, {method: 'POST'});
         const data = await response.json();
   
         if (response.ok) {

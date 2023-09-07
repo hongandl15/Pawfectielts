@@ -16,7 +16,7 @@ const RegistrationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8888/user/register', user);
+      const response = await axios.post('https://pawfectielts.onrender.com/user/register', user);
 
       if (response.status >= 200 && response.status < 300) {
         // Save relevant information to session storage
