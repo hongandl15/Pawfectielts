@@ -4,7 +4,7 @@ import AddTestCard from "./AddTestCard";
 import { TestCardAdmin } from "./AddTestCard";
 
 const SetDetail = (props) => {
-    const API_URL = 'http://localhost:8888/test/getbyset/' + props.setid;
+    const API_URL = 'https://pawfectielts.onrender.com/test/getbyset/' + props.setid;
     const [testData, setData] = useState([]);
     const [urlSet, setUrl] = useState(API_URL);
     const [showTestCardAdmin, setShowTestCardAdmin] = useState(true);
