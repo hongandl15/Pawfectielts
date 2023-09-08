@@ -4,10 +4,12 @@ import TestEditor, {TestEditorWritingOrSpeaking} from '../components/Admin/TestE
 import AddTest from '../components/Admin/AddTest';
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const AdminEditPageReading = (props) => {
     const setid = useLocation().state.setid;
     const skillid = useLocation().state.skillid;
+    const history = useHistory();
     const [listTest, setListTest] = useState(['']);
     const [inputTags, setInputTags] = useState(['']);
     const [testName, setTestName] = useState('');
@@ -52,7 +54,10 @@ const AdminEditPageReading = (props) => {
             })
             .then(response => {
                 // Handle success, e.g., show a success message
-
+                window.alert("Thêm test thành công")
+                history.push({
+                    pathname: '/admin',
+                  });
                 console.log('API request successful', response.data);
             })
             .catch(error => {

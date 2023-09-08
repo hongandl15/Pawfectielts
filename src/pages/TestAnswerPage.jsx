@@ -1,7 +1,6 @@
 import Helmet from '../components/Layout/Helmet'
 
-import React, { useEffect } from "react";
-import TestDetail from '../components/Test/TestDetail';
+import React from "react";
 import { useLocation } from 'react-router-dom'
 import TestAnswer from '../components/Test/TestAnswer';
 

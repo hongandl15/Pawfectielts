@@ -1,9 +1,8 @@
 import Helmet from '../components/Layout/Helmet'
 
-import React, { useEffect } from "react";
+import React from "react";
 import TestDetail from '../components/Test/TestDetail';
 import { useLocation } from 'react-router-dom'
-import { ClassNames } from '@emotion/react';
 
 
 const TestPage = (props) => {

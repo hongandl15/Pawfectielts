@@ -6,6 +6,7 @@ import SetDetail from '../components/Admin/SetDetail';
 
 const AdminSetDetail = () => {
     const setItem = useLocation().state.stateParam;
+    const setid = useLocation().state.setid
     console.log(setItem.id)
     return (
 

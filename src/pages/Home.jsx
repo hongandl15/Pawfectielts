@@ -24,8 +24,6 @@ const Home = () => {
                     <Catalogue imageLink="./banner-6.png" />
                     <ListTestCard setid={1} />
                     <ListTestCard setid={2} />
-                    <ListTestCard setid={1} />
-
                 </>
             );
         } else {

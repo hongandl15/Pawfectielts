@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import { Route, Switch } from 'react-router-dom'
-
 import Home from '../pages/Home'
 import TestPage from '../pages/TestPage'
 import ExamPageReading, {ExamPageListening, ExamPageWriting, ExamPageSpeaking}  from '../pages/ExamPage'
@@ -10,8 +9,9 @@ import Result,{ResultPassage} from '../pages/Result'
 import ProfilePage from '../pages/ProfilePage'
 import AdminDashboard from '../pages/AdminDashboard'
 import AdminSetDetail from '../pages/AdminSetDetail'
-import AdminEditPageReading, { AdminEditPageSpeaking, AdminEditPageWriting} from '../pages/AdminEditPage'
+import AdminEditPageReading from '../pages/AdminEditPage'
 import TestAnswerPage from '../pages/TestAnswerPage'
+import ListTestPage from '../pages/ListTestPage'
 const Routes = () => {
 
     useEffect(() => {
@@ -26,6 +26,7 @@ const Routes = () => {
             <Route path='/' exact component={Home}/>
             <Route path='/home' exact component={Home}/>
             <Route path='/test' exact component={TestPage}/>
+            <Route path='/test/list' exact component={ListTestPage}/>
             <Route path='/exam/reading'  component={ExamPageReading}/>
             <Route path='/exam/writing'  component={ExamPageWriting}/>
             <Route path='/exam/listening'  component={ExamPageListening}/>
@@ -42,8 +43,6 @@ const Routes = () => {
             <Route path='/addtest/speaking'  component={AdminEditPageReading}/>
             <Route path='/admin/'  component={AdminDashboard}/>
             <Route path='/answer/'  component={TestAnswerPage}/>
-            {/* <Route path='/admin'  component={AdminPage}/> */}
-
         </Switch>
     )
 }

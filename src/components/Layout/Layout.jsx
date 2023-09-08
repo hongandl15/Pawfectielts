@@ -62,7 +62,9 @@ export const Header = (props) => {
         </Link>
       </div>
       <div className='header_menu'>
-        <a><div>Làm đề thi</div></a>
+        <Link to="/test/list" className="LinkWithoutUnderline d-flex">
+              <div>Làm đề thi</div>
+        </Link>
         <a><div>Tài liệu</div></a>
         <a><div>Giới thiệu</div></a>
         <a><div>Liên lạc</div></a>

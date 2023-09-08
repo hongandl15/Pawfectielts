@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom'
+import { Button } from '@mui/material';
 const AddTestCard = ( props ) => {
   const [skill, setSkill] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -56,39 +57,45 @@ export default AddTestCard;
 
 
 export const TestCardAdmin = ( props ) => {
-
-
+  const history = useHistory();
    const deleteTest = async () => {
-    try {
-      const response = await fetch('https://pawfectielts.onrender.com/admin/delete/' + props.testid, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+    const isSubmit = window.confirm("Bạn có chắc chắn muốn xóa test")
+    if(isSubmit)
+      try {
+        const response = await fetch('https://pawfectielts.onrender.com/admin/delete/' + props.testid, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }else{
-        props.hideTestCardAdmin()
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }else{
+          props.hideTestCardAdmin()
+        }
+        } catch (error) {
+          console.error('Error:', error);
+        }
       }
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    }
 
+      const navigatePage = () => {
+        history.push({
+          pathname: '/test',
+          state: {stateParam: props.test}
+        });
+      }
 
   return (
     <>
         <div className='test-card-admin'>
             <h3>{props.test.name}</h3>
             <div className='m-5'>
-              <button onClick={deleteTest}>
-                <div className='delete-test'>
-                  <img src="https://icon-library.com/images/small-trash-can-icon/small-trash-can-icon-19.jpg" alt="" />
-                  <h4>Xóa test</h4>
-                </div>
-              </button>
+                {/* <div className='delete-test'>
+
+                </div> */}
+                <Button className='m-2' variant="contained" onClick={navigatePage} >Chi tiết</Button>
+                <Button variant="contained" onClick={deleteTest} color="error" >Xóa Test</Button>
             </div>
         </div>
 

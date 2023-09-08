@@ -57,6 +57,24 @@
     
 }
 
+.delete-set{
+  width: 30px;
+  height: fit-content;
+  text-align: center;
+  padding: 2px;
+  font-size: 20px;
+  line-height: 40px;
+  background-color: red;
+  border-radius: 5px;
+  box-shadow: 4px 3px 3px rgb(104, 104, 104);
+  transition: scale 0.3s;
+  &:hover{
+    cursor: pointer;
+    opacity: 10px;
+    scale: 1.25;
+  }
+}
+
 
 
 .olcards,
@@ -67,7 +85,7 @@
 }
 
 .olcards {
-    padding: 30px;
+  padding: 20px;
   list-style: none;
   counter-reset: cardCount;
   font-family: sans-serif;
@@ -85,7 +103,6 @@ width: fit-content;
   color: white;
   --labelOffset: 1rem;
   --arrowClipSize: 1.5rem;
-  margin: auto;
   margin-top: var(--labelOffset);
 
 }
@@ -106,7 +123,9 @@ width: fit-content;
 }
 
 .olcards li .content {
+position: relative;
 display: flex;
+justify-content: space-between;
 width: 400px;
 font-size: 20px;
   background-color: var(--cardColor);
@@ -148,7 +167,7 @@ font-size: 20px;
 .olcards li .icon {
   grid-area: icon;
   align-self: center;
-  font-size: 2em;
+  font-size: 1.3em;
 }
 .olcards li .content .title {
   grid-area: title;

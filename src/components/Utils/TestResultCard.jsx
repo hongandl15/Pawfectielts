@@ -23,7 +23,7 @@ function TestResultCard(props) {
           <span className="leaderboard__name">{props.data.testName}</span>
           <span className="leaderboard__value">
              {props.data.score} 
-            <span>{props.data.rightAnswer}/4 </span>
+            <span>{props.data.rightAnswer}/40 </span>
 
           </span>
           <span>{props.data.create_at}</span>

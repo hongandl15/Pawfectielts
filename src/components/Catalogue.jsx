@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, useHistory } from 'react-router-dom'
 
 const Catalogue = (props) => {
 
@@ -13,7 +14,7 @@ const Catalogue = (props) => {
                     </div>
                 </div>
                 <img src="./banner-8.png" alt="" />
-            </div> 
+            </div>
         </div>
     )
 }
@@ -24,10 +25,10 @@ export const CatalogueList = (props) => {
 
     return (
         <div className='catalogue_list'>
-            <CatalogueCard imageLink="../study-1.jpg" title='Làm đề thi'></CatalogueCard >
-            <CatalogueCard imageLink="../study-2.jpg" title='Tìm kiếm tài liệu'></CatalogueCard >
-            <CatalogueCard imageLink="../study-3.jpg" title='Chấm điểm writing tự động'></CatalogueCard >
-            <CatalogueCard imageLink="../study-4.jpg" title='Thống kê kết quả luyện thi'></CatalogueCard >
+            <CatalogueCard link = "/test/list" imageLink="../study-1.jpg" title='Làm đề thi'></CatalogueCard >
+            <CatalogueCard link = "/test/list" imageLink="../study-2.jpg" title='Tìm kiếm tài liệu'></CatalogueCard >
+            <CatalogueCard link = "/test/list" imageLink="../study-3.jpg" title='Chấm điểm writing tự động'></CatalogueCard >
+            <CatalogueCard link = "/profile" imageLink="../study-4.jpg" title='Thống kê kết quả luyện thi'></CatalogueCard >
         </div>
     )
 }
@@ -35,11 +36,15 @@ export const CatalogueList = (props) => {
 
 export const CatalogueCard = (props) => {
     return (
-        <div className='catalogue_card'>
-            <img src={props.imageLink} alt="" />
-            <div className='catalogue_card_title'>{props.title}</div>
-            <div className='catalogue_card_decobar'></div>
-        </div>
+
+        <Link to={props.link} className="LinkWithoutUnderline d-flex">
+            <div className='catalogue_card'>
+                <img src={props.imageLink} alt="" />
+                <div className='catalogue_card_title'>{props.title}</div>
+                <div className='catalogue_card_decobar'></div>
+            </div>
+        </Link>
+
     )
 }
 

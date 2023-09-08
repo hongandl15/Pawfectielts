@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: scale 0.2s;
     p{
         text-align: center;
         font-size: 18px;
@@ -22,7 +23,8 @@
     }
     &:hover{
         cursor: pointer;
-        opacity: 0.9;
+        opacity: 0.8;
+        scale: 1.1
     }
 
 }
@@ -62,9 +64,10 @@
 }
 
 .list-test-card{
-    margin-top: 50px;
+    padding-top: 70px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -73,9 +76,12 @@
 }
 
 .set-name{
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    color: white;
     transition:  scale 0.3s;
     &:hover{
-        scale: 1.05
+        scale: 1.25;
+        color: white;
     }
 }
