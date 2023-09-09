@@ -116,7 +116,7 @@ export const AnswerWriting = (props) => {
     const isConfirmed = window.confirm("Bạn có chắc chắn muốn nộp bài?");
   
     if (isConfirmed) {
-        if(sessionStorage.getItem('ieltsTranscripts')){
+        if(sessionStorage.getItem('ieltsAnswersWriting')){
           setIsSubmitting(true);
           setShowComponent(true); // show the component
           const savedAnswers = JSON.parse(sessionStorage.getItem('ieltsAnswersWriting'))

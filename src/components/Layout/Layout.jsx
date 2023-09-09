@@ -10,6 +10,7 @@ import LogoutPopup from './LogoutPopup';
 import { Link, useHistory } from 'react-router-dom'
 import ScrollToTop from '../Utils/ScrollToTop';
 import FacebookChatPlugin from './FacebookChatPlugin';
+import FacebookLikeButton from './FacebookLikeButton';
 
 const Layout = () => {
 
@@ -111,9 +112,9 @@ const Footer = () => {
     <>
     
       <div className="fb-like mb-2">
-        {/* Facebook Like button */}
-        {/* Place your Facebook Like button code here */}
-      </div>
+        {/* <FacebookLikeButton/> */}
+       </div> 
+
       <div className="row">
         <div className="col-sm-12 col-md grow0">
           <a href="/"><img className="mb-2" src="/static/img/logo_full_sm.png" alt="" height="30" /></a>
