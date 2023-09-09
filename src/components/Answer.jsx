@@ -116,40 +116,42 @@ export const AnswerWriting = (props) => {
     const isConfirmed = window.confirm("Bạn có chắc chắn muốn nộp bài?");
   
     if (isConfirmed) {
-      setIsSubmitting(true);
-      setShowComponent(true); // show the component
-      const savedAnswers = JSON.parse(sessionStorage.getItem('ieltsAnswersWriting'))
-      const submitContent = JSON.stringify({ answer: savedAnswers, topic: listpart })
-      try {
+        if(sessionStorage.getItem('ieltsTranscripts')){
+          setIsSubmitting(true);
+          setShowComponent(true); // show the component
+          const savedAnswers = JSON.parse(sessionStorage.getItem('ieltsAnswersWriting'))
+          const submitContent = JSON.stringify({ answer: savedAnswers, topic: listpart })
+          try {
 
-        const response = await fetch('https://pawfectielts.onrender.com/result/getpassagescore/'+ props.testid +'?userId='+ userId, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: submitContent,
-        });
+            const response = await fetch('https://pawfectielts.onrender.com/result/getpassagescore/'+ props.testid +'?userId='+ userId, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: submitContent,
+            });
 
-        const data = await response.json();
-        const testResultId = data.id;
+            const data = await response.json();
+            const testResultId = data.id;
 
 
-        history.push({
-          pathname: "/exam/resultpassage/" + testResultId,
-          state: {
-            id: props.testid,
-            testResultId: testResultId
+            history.push({
+              pathname: "/exam/resultpassage/" + testResultId,
+              state: {
+                id: props.testid,
+                testResultId: testResultId
+              }
+            });
+      
+            console.log(testResultId); // Output the testResultId for debugging
+      
+            sessionStorage.removeItem('ieltsAnswersWriting');
+            sessionStorage.removeItem('ieltsAnswersWritingSubmit');
+      
+          } catch (error) {
+            console.error('Error:', error);
           }
-        });
-  
-        console.log(testResultId); // Output the testResultId for debugging
-  
-        sessionStorage.removeItem('ieltsAnswersWriting');
-        sessionStorage.removeItem('ieltsAnswersWritingSubmit');
-  
-      } catch (error) {
-        console.error('Error:', error);
-      }
+      }else window.alert("Vui lòng nhập đáp án trước khi nộp bài")
     }
 
 
@@ -251,44 +253,44 @@ export const AnswerSpeaking = (props) => {
   const handleConfirmSubmit = async () => {
     const isConfirmed = window.confirm("Bạn có chắc chắn muốn nộp bài?");
     if (isConfirmed) {
-      setIsSubmitting(true);
-      setShowComponent(true); // show the component
-      const savedTranscripts = JSON.parse(sessionStorage.getItem('ieltsTranscripts'))
-      const submitContent = JSON.stringify({ answer: savedTranscripts, topic: listpart })
-      const response = await fetch('https://pawfectielts.onrender.com/result/getpassagescore/'+ props.testid +'?userId='+ userId, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: submitContent,
-        });
+        if(sessionStorage.getItem('ieltsTranscripts')){
+          setIsSubmitting(true);
+          setShowComponent(true); // show the component
+          const savedTranscripts = JSON.parse(sessionStorage.getItem('ieltsTranscripts'))
+          const submitContent = JSON.stringify({ answer: savedTranscripts, topic: listpart })
+          const response = await fetch('https://pawfectielts.onrender.com/result/getpassagescore/'+ props.testid +'?userId='+ userId, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: submitContent,
+            });
 
-        if (!response.ok) {
-          window.alert("Có lỗi xảy ra, vui lòng thử lại sau 1 phút")
-          throw new Error('Network response was not ok');
-        }
+            if (!response.ok) {
+              window.alert("Có lỗi xảy ra, vui lòng thử lại sau 1 phút")
+              throw new Error('Network response was not ok');
+            }
 
-        const data = await response.json();
-        const testResultId = data.id;
+            const data = await response.json();
+            const testResultId = data.id;
 
-        console.log(testResultId); // Output the testResultId for debugging
-        sessionStorage.removeItem('ieltsTranscripts');
+            console.log(testResultId); // Output the testResultId for debugging
+            sessionStorage.removeItem('ieltsTranscripts');
 
-        history.push({
-          pathname: "/exam/resultpassage/" + testResultId,
-          state: {
-            id: props.testid,
-            testResultId: testResultId
-          }
-        });
+            history.push({
+              pathname: "/exam/resultpassage/" + testResultId,
+              state: {
+                id: props.testid,
+                testResultId: testResultId
+              }
+            });
+      }else window.alert("Vui lòng nhập đáp án trước khi nộp bài")
     }
   };
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
-
-
 
   const listenContinuously = () => {
     SpeechRecognition.startListening({

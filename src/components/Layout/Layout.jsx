@@ -9,6 +9,7 @@ import LoginPopup from './LoginPopup';
 import LogoutPopup from './LogoutPopup';
 import { Link, useHistory } from 'react-router-dom'
 import ScrollToTop from '../Utils/ScrollToTop';
+import FacebookChatPlugin from './FacebookChatPlugin';
 
 const Layout = () => {
 
@@ -108,6 +109,7 @@ export const Header = (props) => {
 const Footer = () => {
   return (
     <>
+    
       <div className="fb-like mb-2">
         {/* Facebook Like button */}
         {/* Place your Facebook Like button code here */}
@@ -164,6 +166,7 @@ export const FooterWrapper = () => {
   return (
     <div className="footer-wrapper">
       <div className="footer-container">
+        <FacebookChatPlugin/>
         <Footer />
       </div>
     </div>

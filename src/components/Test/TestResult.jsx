@@ -38,10 +38,10 @@ const TestResult = (props) => {
             <span class="result-stats-label">Kết quả làm bài</span>
             <span class="result-stats-text">{score.rightAnswer}/40</span>
           </div>
-          <div class="result-stats-item">
+          {/* <div class="result-stats-item">
             <span class="result-stats-label">Độ chính xác</span>
             <span class="result-stats-text">0.0%</span>
-          </div>
+          </div> */}
 
         </div>
         <div className='col-12 col-md-9'>

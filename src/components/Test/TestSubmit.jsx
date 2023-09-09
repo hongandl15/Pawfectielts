@@ -12,39 +12,42 @@ const TestSubmit = (props) => {
   const isConfirmed = window.confirm("Bạn có chắc chắn muốn nộp bài?");
   const userId = JSON.parse(sessionStorage.getItem('user')).id
     if (isConfirmed) {
-      setIsSubmitting(true);
+      if(sessionStorage.getItem('ieltsAnswersSubmit')){
+        setIsSubmitting(true);
 
-      try {
-        const response = await fetch('https://pawfectielts.onrender.com/result/checkResult/' + props.testid + "?userId=" + userId, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: sessionStorage.getItem('ieltsAnswersSubmit'),
-        });
+        try {
+          const response = await fetch('https://pawfectielts.onrender.com/result/checkResult/' + props.testid + "?userId=" + userId, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: sessionStorage.getItem('ieltsAnswersSubmit'),
+          });
 
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        const data = await response.json();
-        const testResultId = data.id;
-
-        console.log(testResultId); // Output the testResultId for debugging
-
-        sessionStorage.removeItem('ieltsAnswers');
-        sessionStorage.removeItem('ieltsAnswersSubmit');
-
-        history.push({
-          pathname: "/exam/result/" + testResultId,
-          state: {
-            id: props.testid,
-            testResultId: testResultId
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
           }
-        });
-      } catch (error) {
-        console.error('Error:', error);
-      }
+
+          const data = await response.json();
+          const testResultId = data.id;
+
+          console.log(testResultId); // Output the testResultId for debugging
+
+          sessionStorage.removeItem('ieltsAnswers');
+          sessionStorage.removeItem('ieltsAnswersSubmit');
+
+          history.push({
+            pathname: "/exam/result/" + testResultId,
+            state: {
+              id: props.testid,
+              testResultId: testResultId
+            }
+          });
+        } catch (error) {
+          console.error('Error:', error);
+        }
+    }
+    else window.alert("Vui lòng nhập đáp án trước khi nộp bài")
     }
   };
 
